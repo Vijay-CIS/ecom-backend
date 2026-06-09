@@ -1,6 +1,8 @@
 
 const productModel = require('../models/productModel');
 
+//Get all products => /api/v1/products
+
 exports.getProducts = async  (req, res, next) => {
     try {
         const products = await productModel.find();
@@ -9,6 +11,8 @@ exports.getProducts = async  (req, res, next) => {
         res.status(500).json({ success: false, message: 'Server Error' });
     }
 }
+
+//Get product by ID => /api/v1/product/:id
 
 exports.getProductById = async (req, res, next) => {
     try {
