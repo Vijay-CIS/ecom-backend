@@ -3,42 +3,42 @@ const mongoose = require('mongoose');
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, 'Please enter product name']
+      
     },
     price: {
-        type: Number,
-        required: [true, 'Please enter product price']
+        type: String,
+      
     },
     description: {
         type: String,
-        required: [true, 'Please enter product description']
+        
     },
     rating: {
-        type: Number,
+        type: String,
         default: 0 
     },
     images: [
         {
-            type: String,
-            required: [true, 'Please enter image URL']
+            Image: String,
+         
         }
     ],
     category: {
         type: String,
-        required: [true, 'Please enter product category']
+     
         },
     stock: {
-        type: Number,
+        type: String,
         required: [true, 'Please enter product stock'],
-        maxLength: [5, 'Stock cannot exceed 5 characters']
+      
     },
     numOfReviews: {     
-        type: Number,
-        default: 0
+        type: String,
+    
     },
     createdAt: {
         type: Date,
-        default: Date.now
+      
     }               
     
 });
