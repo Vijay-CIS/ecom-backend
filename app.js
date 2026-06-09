@@ -9,6 +9,8 @@ require('dotenv').config({ path: './config/config.env' });
 const productRoutes = require('./routes/product');
 const orderRoutes = require('./routes/order');
 connectDatabase();
+
+app.use(express.json());
 app.use('/api/v1', productRoutes);
 app.use('/api/v1', orderRoutes);
 
