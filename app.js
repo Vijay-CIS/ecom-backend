@@ -1,10 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 const connectDatabase = require('./config/connectDatabase');
 
 
 require('dotenv').config({ path: './config/config.env' });
+app.use(cors({origin: 'http://localhost:4200'}));
 
 const productRoutes = require('./routes/product');
 const orderRoutes = require('./routes/order');
